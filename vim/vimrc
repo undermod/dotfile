@@ -1,0 +1,150 @@
+"****************************
+"*                          *
+"*   Vimcrc by blackarrow   *
+"*                          *
+"****************************
+
+" ---------- IMPOSTAZIONI GENERALI ----------
+
+"Scrive le modifiche prima di cambiare buffer
+set autowrite
+
+"Disattiviamo i backupfile
+set nobackup
+set nowritebackup
+set noswapfile
+
+"Cronologia dei comandi
+set history=50
+
+"Abilitazione modalita' copia-incolla
+set paste
+
+"Evidenziare termini trovati con la ricerca
+set hlsearch
+
+"Disabilitiamo il wrap delle linee
+set nowrap
+
+"Retro compatibilita' disabilitata
+set nocompatible
+
+"Mostiramo i numeri di riga
+set number
+
+"Mostriamo le coordinate del cursore
+set ruler
+
+"Mostra output comandi in barra di stato
+set showcmd
+
+"Disabilitiamo il wrap delle parole
+set textwidth=0
+
+"Settiamo il numero di undo
+set undolevels=50
+
+"Menu per il completamento dei comandi
+set wildmenu
+
+"Forza apertura file con permessi di sudo
+cmap w!! %!sudo tee > /dev/null %
+
+"Trascinare riga in alto in basso con CTRL+arrow
+nmap <C-Up> ddkP
+nmap <C-Down> ddp
+
+"Spostamento tra le varie finestre con ALT+arrow
+nmap <silent> <A-Up> :wincmd k<CR>
+nmap <silent> <A-Down> :wincmd j<CR>
+nmap <silent> <A-Left> :wincmd h<CR>
+nmap <silent> <A-Right> :wincmd l<CR>
+
+" ---------- SCHEMI COLORI ----------
+
+"Impostazione per sfondo del teminale scuro
+set bg=dark
+
+"Impostazione schema colori
+colorscheme molokai
+set t_Co=256
+
+" ---------- STATUSBAR ----------
+
+"Impostiamo statusbar sempre visibile
+set laststatus=2
+
+"Cambio colore per la modalita' inserimento
+if &term=~ "xterm"
+	let &t_SI = "\<Esc>]12;cyan\x7"
+	let &t_EI = "\<Esc>]12;white\x7"
+endif
+
+"Info della Statusbar
+set statusline=%F%m%r%h%w\ %y\ [row=%l/%L]\ [col=%02v]\ [%02p%%]\
+
+" ---------- PROGRAMMAZIONE ----------
+
+"Colorazione del testo in base alla sintassi
+syntax on
+let python_highlight_all=1
+
+"Abilitiamo la autoindentazione
+set autoindent
+
+"Usare gli spazi invece della tabulazione
+set expandtab
+
+"N° di spazi da sostituire in autoindentazione
+set shiftwidth=4
+
+"Evidenziamo le parentesi corrispondenti
+set showmatch
+
+"Sostituiamo il carattere tab con spazi
+set tabstop=4
+set softtabstop=4
+
+"Impostiamo il fileformat
+set fileformat=unix
+
+" Code Folding
+set foldmethod=indent
+set foldlevel=99
+
+" Abilitiamo il code folding con lo spazio
+nnoremap <space> za
+
+" ---------- CONFIGURAZIONE PLUGIN ----------
+
+" Attivazione Tagbar
+nmap <F8> :TagbarToggle<CR>
+
+" Configurazione Tema Airline
+let g:airline_theme='murmur'
+"let g:airline_powerline_fonts=1
+
+" ---------- ATTIVAZIONE PLUGIN -----------
+
+filetype off
+set rtp+=~/.vim/bundle/Vundle.vim
+call vundle#begin()
+
+" let Vundle manage Vundle required!
+Plugin 'VundleVim/Vundle.vim'
+
+" The bunbles you install will be listed here
+Plugin 'scrooloose/nerdtree'
+"Plugin 'Lokaltog/powerline',{'rtp': 'poweline/bindings/vim/'}
+Plugin 'klen/python-mode'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'scrooloose/syntastic'
+Plugin 'majutsushi/tagbar'
+Plugin 'tmhedberg/SimpylFold'
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'tpope/vim-fugitive'
+
+" All of your Plugins must be added before the following line
+call vundle#end()
+filetype plugin indent on
