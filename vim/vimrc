@@ -1,6 +1,6 @@
 "****************************
 "*                          *
-"*   Vimcrc by blackarrow   *
+"*   Vimcrc by Undermod     *
 "*                          *
 "****************************
 
@@ -137,12 +137,11 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'scrooloose/nerdtree'
 "Plugin 'Lokaltog/powerline',{'rtp': 'poweline/bindings/vim/'}
 Plugin 'klen/python-mode'
-Plugin 'Valloric/YouCompleteMe'
-Plugin 'scrooloose/syntastic'
+"Plugin 'Valloric/YouCompleteMe'
+"Plugin 'scrooloose/syntastic'
 Plugin 'majutsushi/tagbar'
 Plugin 'tmhedberg/SimpylFold'
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+"Plugin 'vim-airline/vim-airline'
 Plugin 'tpope/vim-fugitive'
 
 " All of your Plugins must be added before the following line
