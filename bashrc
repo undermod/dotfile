@@ -114,12 +114,9 @@ RESET="\[$(tput sgr0)\]"
 PS1="${BOLD}${BIANCO}┌─[ ${BLU}\u ${CIANO}@ ${BLU}\h ${BIANCO}]----------[ ${VERDE}\A ${BIANCO}- ${VERDE}\d ${BIANCO}]\n└─[ ${CIANO}\w ${BIANCO}]-- ${ROSSO}\$ ${BIANCO}> ${RESET}"
 
 #--- ALIAS ---#
-alias agg='sudo pacman -Syu'
-alias cerca='sudo pacman -Ss'
-alias inst='sudo pacman -S'
-alias rem='sudo pacman -Rcs'
-alias yagg='sudo pacman -Syyu'
-alias yinst='yaourt -S'
-alias ycerca='yaourt -Ss'
-alias server='ssh pi@192.168.0.99'
-alias neo='neofetch --image /home/blackarrow/image/wallpaper/anonymous_hoody.jpg'
+alias agg='sudo zypper update'
+alias cerca='sudo zypper search'
+alias inst='sudo zypper install'
+alias rem='sudo zypper remove'
+alias server='ssh pi@192.168.0.100'
+#alias neo='neofetch --image /home/blackarrow/image/wallpaper/anonymous_hoody.jpg'
