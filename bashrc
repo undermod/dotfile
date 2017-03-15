@@ -111,7 +111,8 @@ BOLD="\[$(tput bold)\]"
 RESET="\[$(tput sgr0)\]"
 
 #--- PROMPT PERSONALIZZATO ---#
-PS1="${BOLD}${BIANCO}┌─[ ${BLU}\u ${CIANO}@ ${BLU}\h ${BIANCO}]----------[ ${VERDE}\A ${BIANCO}- ${VERDE}\d ${BIANCO}]\n└─[ ${CIANO}\w ${BIANCO}]-- ${ROSSO}\$ ${BIANCO}> ${RESET}"
+#PS1="${BOLD}${BIANCO}┌─[ ${BLU}\u ${CIANO}@ ${BLU}\h ${BIANCO}]----------[ ${VERDE}\A ${BIANCO}- ${VERDE}\d ${BIANCO}]\n└─[ ${CIANO}\w ${BIANCO}]-- ${ROSSO}\$ ${BIANCO}> ${RESET}"
+PS1="${BIANCO}┌─[ ${BOLD}${BLU}\u ${CIANO}@ ${BLU}\h ${RESET}${BIANCO}]----------[ ${BOLD}${VERDE}\A ${BIANCO}- ${VERDE}\d ${RESET}${BIANCO}]\n└─[ ${BOLD}${CIANO}\w ${RESET}${BIANCO}]-- ${BOLD}${ROSSO}\$ ${RESET}${BIANCO}> ${RESET}"
 
 #--- ALIAS ---#
 alias agg='sudo zypper update'
@@ -119,5 +120,5 @@ alias cerca='sudo zypper search'
 alias inst='sudo zypper install'
 alias rem='sudo zypper remove'
 alias sync='sudo zypper refresh'
-alias server='ssh pi@192.168.0.100'
+alias server='ssh antonio@192.168.0.100'
 #alias neo='neofetch --image /home/blackarrow/image/wallpaper/anonymous_hoody.jpg'
