@@ -1,14 +1,15 @@
-# .bashrc
+#
+# ~/.bashrc
+#
 
-# Source global definitions
-if [ -f /etc/bashrc ]; then
-	. /etc/bashrc
-fi
+# If not running interactively, don't do anything
+[[ $- != *i* ]] && return
 
-# Uncomment the following line if you don't like systemctl's auto-paging feature:
-# export SYSTEMD_PAGER=
-
-# User specific aliases and functions
+#--- COLORS FOLDER ---#
+[ -e "/etc/DIR_COLORS" ] && DIR_COLORS="/etc/DIR_COLORS"
+[ -e "$HOME/.dircolors" ] && DIR_COLORS="$HOME/.dircolors"
+[ -e "$DIR_COLORS" ] || DIR_COLORS=""
+eval "`dircolors -b $DIR_COLORS`"
 
 #--- VARIABILI COLORE ---#
 BIANCO="\[$(tput setaf 7)\]"
@@ -24,9 +25,14 @@ RESET="\[$(tput sgr0)\]"
 PS1="${BIANCO}┌─[ ${BOLD}${BLU}\u ${CIANO}@ ${BLU}\h ${RESET}${BIANCO}]----------[ ${BOLD}${VERDE}\A ${BIANCO}- ${VERDE}\d ${RESET}${BIANCO}]\n└─[ ${BOLD}${CIANO}\w ${RESET}${BIANCO}]-- ${BOLD}${ROSSO}\$ ${RESET}${BIANCO}> ${RESET}"
 
 #--- ALIAS ---#
-alias agg='sudo dnf update'
-alias cerca='sudo dnf search'
-alias inst='sudo dnf install'
-alias rem='sudo dnf remove'
+alias agg='sudo pacman -Syu'
+alias yagg='sudo pacman -Syyu'
+alias cerca='sudo pacman -Ss'
+alias ycerca='yaourt -Ss'
+alias inst='sudo pacman -S'
+alias yinst='yaourt -S'
+alias rem='sudo pacman -Rns'
 alias server='ssh antonio@192.168.0.100'
 #alias neo='neofetch --image /home/blackarrow/image/wallpaper/anonymous_hoody.jpg'
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
