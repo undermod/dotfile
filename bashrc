@@ -1,9 +1,16 @@
-#
-# ~/.bashrc
-#
+source /usr/share/defaults/etc/profile
 
-# If not running interactively, don't do anything
-[[ $- != *i* ]] && return
+#--- POWERLINE ---#
+#source /usr/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
+
+#--- ALIAS ---#
+alias agg='sudo eopkg up'
+alias inst='sudo eopkg it'
+alias cerca='sudo eopkg sr'
+alias rem='sudo eopkg rm'
+alias server='ssh antonio@192.168.0.100'
+alias ls='ls --color=auto'
+alias grep='grep --color=auto'
 
 [ -e "/etc/DIR_COLORS" ] && DIR_COLORS="/etc/DIR_COLORS"
 [ -e "$HOME/.dircolors" ] && DIR_COLORS="$HOME/.dircolors"
@@ -20,17 +27,6 @@ BOLD="\[$(tput bold)\]"
 RESET="\[$(tput sgr0)\]"
 
 #--- PROMPT PERSONALIZZATO ---#
-#PS1="${BOLD}${BIANCO}┌─[ ${BLU}\u ${CIANO}@ ${BLU}\h ${BIANCO}]──────────[ ${VERDE}\A ${BIANCO}- ${VERDE}\d ${BIANCO}]\n└─[ ${CIANO}\w ${BIANCO}]-- ${ROSSO}\$ ${BIANCO}> ${RESET}"
-PS1="${BIANCO}┌─[ ${BOLD}${BLU}\u ${CIANO}@ ${BLU}\h ${RESET}${BIANCO}]──────────[ ${BOLD}${VERDE}\A ${BIANCO}- ${VERDE}\d ${RESET}${BIANCO}]\n└─[ ${BOLD}${CIANO}\w ${RESET}${BIANCO}]── ${BOLD}${ROSSO}\$ ${RESET}${BIANCO}> ${RESET}"
+#PS1="${BIANCO}┌─[ ${BOLD}${BLU}\u ${CIANO}@ ${BLU}\h ${RESET}${BIANCO}]──────────[ ${BOLD}${VERDE}\A ${BIANCO}- ${VERDE}\d ${RESET}${BIANCO}]\n└─[ ${BOLD}${CIANO}\w ${RESET}${BIANCO}]── ${BOLD}${ROSSO}\$ ${RESET}${BIANCO}> ${RESET}"
 
-#--- ALIAS ---#
-alias agg='sudo pacman -Syu'
-alias yagg='sudo pacman -Syyu'
-alias cerca='sudo pacman -Ss'
-alias ycerca='yaourt -Ss'
-alias inst='sudo pacman -S'
-alias yinst='yaourt -S'
-alias rem='sudo pacman -Rns'
-alias server='ssh antonio@192.168.0.100'
-alias ls='ls --color=auto'
-alias grep='grep --color=auto'
+PS1="${BIANCO}┌─[ ${BOLD}${BLU}\u ${CIANO}@ ${BLU}\h ${RESET}${BIANCO}]──────────[ ${BOLD}${CIANO}\w ${RESET}${BIANCO}]\n└───╼ ${BOLD}${ROSSO}\$ ${RESET}${BIANCO}> ${RESET}"
