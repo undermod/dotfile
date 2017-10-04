@@ -50,6 +50,8 @@ set wildmenu
 "Forza apertura file con permessi di sudo
 cmap w!! %!sudo tee > /dev/null %
 
+" ---------- MAPPATURA TASTIERA ----------
+
 "Trascinare riga in alto in basso con CTRL+arrow
 nmap <C-Up> ddkP
 nmap <C-Down> ddp
@@ -59,6 +61,14 @@ nmap <silent> <A-Up> :wincmd k<CR>
 nmap <silent> <A-Down> :wincmd j<CR>
 nmap <silent> <A-Left> :wincmd h<CR>
 nmap <silent> <A-Right> :wincmd l<CR>
+
+"Keybinging x NerdTree
+map <C-n> :NERDTreeToggle<CR>
+
+" ---------- CARATTERI ----------
+
+set encoding=utf8
+set guifont=Droid\ Sans\ Mono\ for\ Powerline\ Plus\ Nerd\ File\ Types\ 11
 
 " ---------- SCHEMI COLORI ----------
 
@@ -82,11 +92,15 @@ endif
 
 "Info della Statusbar
 set statusline=%F%m%r%h%w\ %y\ [row=%l/%L]\ [col=%02v]\ [%02p%%]\
+set statusline+=%#warningmsg#
+set statusline+=%{SyntasticStatuslineFlag()}
+set statusline+=%*
 
 " ---------- PROGRAMMAZIONE ----------
 
 "Colorazione del testo in base alla sintassi
 syntax on
+syntax enable
 let python_highlight_all=1
 
 "Abilitiamo la autoindentazione
@@ -122,28 +136,38 @@ nmap <F8> :TagbarToggle<CR>
 
 " Configurazione Tema Airline
 let g:airline_theme='murmur'
-"let g:airline_powerline_fonts=1
+let g:airline_powerline_fonts=1
+
+" Configurazione Syntastic
+let g:syntastic_always_populate_loc_list = 1
+let g:syntastic_auto_loc_list = 1
+let g:syntastic_check_on_open = 1
+let g:syntastic_check_on_wq = 0
 
 " ---------- ATTIVAZIONE PLUGIN -----------
 
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#begin()
-
-" let Vundle manage Vundle required!
+" --- Gestione Plugin ---"
 Plugin 'VundleVim/Vundle.vim'
-
-" The bunbles you install will be listed here
+" --- Utility  --- "
 Plugin 'scrooloose/nerdtree'
-"Plugin 'Lokaltog/powerline',{'rtp': 'poweline/bindings/vim/'}
-Plugin 'klen/python-mode'
-"Plugin 'Valloric/YouCompleteMe'
-"Plugin 'scrooloose/syntastic'
 Plugin 'majutsushi/tagbar'
 Plugin 'tmhedberg/SimpylFold'
-"Plugin 'vim-airline/vim-airline'
+Plugin 'jiangmiao/auto-pairs'
+" --- Aspetto ---"
+Plugin 'vim-airline/vim-airline'
+Plugin 'vim-airline/vim-airline-themes'
+Plugin 'ryanoasis/vim-devicons'
+"--- Git ---"
 Plugin 'tpope/vim-fugitive'
-
-" All of your Plugins must be added before the following line
+" --- Sintassi --- "
+Plugin 'carlitux/deoplete-ternjs', { 'do': 'npm install -g tern' }
+Plugin 'pangloss/vim-javascript'
+Plugin 'mattn/emmet-vim'
+Plugin 'elzr/vim-json'
+Plugin 'vim-syntastic/syntastic'
+"Plugin 'klen/python-mode'
 call vundle#end()
 filetype plugin indent on
