@@ -14,14 +14,12 @@ alias rem='sudo pacman -Rns'
 alias ycerca='yaourt -Ss'
 alias yinst='yaourt -S'
 # Comandi
-alias icone='sudo nautilus /usr/share/icons'
-alias temi='sudo nautilus /usr/share/themes'
-alias i3config='vim ~/.config/i3/config'
-alias polybar='vim ~/.config/polybar/config'
-alias bashrc='vim ~/.bashrc'
-alias agg_bash='source ~/.bashrc'
-alias zshrc='vim ~/.zshrc'
-alias agg_zsh='source ~/.zshrc'
+alias icone='sudo thunar /usr/share/icons &'
+alias temi='sudo thunar /usr/share/themes &'
+alias bashrc='mousepad ~/.bashrc &'
+alias aggbash='source ~/.bashrc'
+alias zshrc='mousepad ~/.zshrc &'
+alias aggzsh='source ~/.zshrc'
 alias server='ssh antonio@192.168.1.100'
 # Visualizzazione
 alias ls='ls --color=auto'
@@ -38,3 +36,4 @@ RESET="\[$(tput sgr0)\]"
 
 #--- PROMPT PERSONALIZZATO ---#
 PS1="${BIANCO}┌─[ ${BOLD}${BLU}\u ${CIANO}@ ${BLU}\h ${RESET}${BIANCO}]─────[ ${BOLD}${CIANO}\w ${RESET}${BIANCO}]\n└───╼ ${BOLD}${ROSSO}\$ ${RESET}${BIANCO}> ${RESET}"
+

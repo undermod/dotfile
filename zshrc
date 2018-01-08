@@ -1,3 +1,7 @@
+# ------------------------------------------------------ #
+#                    GENERAL SETTINGS                    #
+# ------------------------------------------------------ #
+
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
@@ -60,7 +64,7 @@ source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
-# export LANG=en_US.UTF-8
+export LANG=it_IT.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -84,7 +88,10 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-#--- ALIAS ---#
+# ------------------------------------------------------ #
+#                         ALIAS                          #
+# ------------------------------------------------------ #
+
 # Software
 alias agg='sudo pacman -Syu'
 alias inst='sudo pacman -S'
@@ -93,39 +100,89 @@ alias rem='sudo pacman -Rns'
 alias ycerca='yaourt -Ss'
 alias yinst='yaourt -S'
 # Comandi
-alias icone='sudo nautilus /usr/share/icons'
-alias temi='sudo nautilus /usr/share/themes'
-alias vimrc='vim ~/.vimrc'
-alias i3config='vim ~/.config/i3/config'
-alias polybar='vim ~/.config/polybar/config'
-alias bashrc='vim ~/.bashrc'
-alias agg_bash='source ~/.bashrc'
-alias zshrc='vim ~/.zshrc'
-alias agg_zsh='source ~/.zshrc'
+alias icone='sudo thunar /usr/share/icons &'
+alias temi='sudo thunar /usr/share/themes &'
+alias bashrc='mousepad ~/.bashrc &'
+alias aggbash='source ~/.bashrc'
+alias zshrc='mousepad ~/.zshrc &'
+alias aggzsh='source ~/.zshrc'
 alias server='ssh antonio@192.168.1.100'
 # Visualizzazione
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
 
-# --- POWERLEVEL9K SETTINGS ---#
-# Caratteri
+# ------------------------------------------------------ #
+#                POWERLEVEL9K SETTINGS                   #
+# ------------------------------------------------------ #
+
+# --- Caratteri
 POWERLEVEL9K_MODE='awesome-patched'
-# Prompt multiriga
+# --- Prompt multiriga
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="┌─"
 POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="└───╼ "
 POWERLEVEL9K_PROMPT_ADD_NEWLINE=true 
-# Folder
-POWERLEVEL9K_SHORTEN_STRATEGY="truncate_left"
+# --- Context Locale
+POWERLEVEL9K_HOST_ICON_FOREGROUND="012" #blue
+POWERLEVEL9K_HOST_ICON_BACKGROUND="015" #white
+POWERLEVEL9K_HOST_ICON='\uf109'
+# --- Context SSH
+POWERLEVEL9K_SSH_FOREGROUND="015" #White
+POWERLEVEL9K_SSH_BACKGROUND="012" #blue
+POWERLEVEL9K_SSH_ICON='\uf233' 
+# --- User
+POWERLEVEL9K_USER_ICON='\uf007'
+#POWERLEVEL9K_USER_DEFAULT_FOREGROUND="012" #blue
+#POWERLEVEL9K_USER_DEFAULT_BACKGROUND="015" #White
+POWERLEVEL9K_USER_ROOT_ICON='\uf072'
+#POWERLEVEL9K_USER_ROOT_FOREGROUND="001" #red
+#POWERLEVEL9K_USER_ROOT_BACKGROUND="015" #White
+# --- Root
+POWERLEVEL9K_ROOT_INDICATOR_FOREGROUND="015" #white
+POWERLEVEL9K_ROOT_INDICATOR_BACKGROUND="001" #red
+POWERLEVEL9K_ROOT_ICON='\uf06d'
+# --- Folder
+POWERLEVEL9K_SHORTEN_STRATEGY="truncate_from_left"
 POWERLEVEL9K_SHORTEN_DIR_LENGTH=3
 POWERLEVEL9K_DIR_SHOW_WRITABLE=true
-POWERLEVEL9K_HOME_ICON='\uF015 '
-POWERLEVEL9K_HOME_SUB_ICON='\uF07C '
-POWERLEVEL9K_FOLDER_ICON='\uF109 '
-POWERLEVEL9K_SSH_ICON="\uF233 "
-# Versioning
-POWERLEVEL9L_VCS_GIT_GITHUB_ICON=$'\uF09B'
-POWERLEVEL9L_VCS_GIT_BITBUCKET_ICON=$'\uF171'
-# Disposizione Elementi
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(context dir rbenv vcs ssh)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator background_jobs history time)
+POWERLEVEL9K_DIR_WRITABLE_FORBIDDEN_FOREGROUND="015" #white
+POWERLEVEL9K_DIR_WRITABLE_FORBIDDEN_BACKGROUND="001" #red
+POWERLEVEL9K_HOME_ICON='\uf015 '
+POWERLEVEL9K_DIR_HOME_FOREGROUND="015" #white
+POWERLEVEL9K_DIR_HOME_BACKGROUND="012" #blue
+POWERLEVEL9K_HOME_SUB_ICON='\uf07c '
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND="015" #white
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND="012" #blue
+POWERLEVEL9K_FOLDER_ICON='\uf109 '
+POWERLEVEL9K_DIR_DEFAULT_FOREGROUND="015" #white
+POWERLEVEL9K_DIR_DEFAULT_BACKGROUND="012" #blue
+POWERLEVEL9K_SSH_ICON='\uf233 '
+# --- Versioning
+POWERLEVEL9K_VCS_GIT_GITHUB_ICON='\uf09b'
+POWERLEVEL9K_VCS_GIT_BITBUCKET_ICON='\uf171'
+POWERLEVEL9K_VCS_UNTRACKED_ICON='\uf069'
+POWERLEVEL9K_VCS_UNSTAGED_ICON='\uf128'
+POWERLEVEL9K_VCS_INCOMING_CHANGES_ICON='\uf063'
+POWERLEVEL9K_VCS_OUTGOING_CHANGES_ICON='\uf062'
+POWERLEVEL9K_VCS_COMMIT_ICON="\uf12a"
+POWERLEVEL9K_VCS_CLEAN_BACKGROUND="006" #LightSeaGreen
+POWERLEVEL9K_VCS_CLEAN_FOREGROUND="000" #black
+POWERLEVEL9K_VCS_MODIFIED_BACKGROUND="011" #yellow
+POWERLEVEL9K_VCS_MODIFIED_FOREGROUND="000" #black
+POWERLEVEL9K_VCS_UNTRACKED_BACKGROUND="013" #DeepPink
+POWERLEVEL9K_VCS_UNTRACKED_FOREGROUND="000" #black
+# --- Status
+POWERLEVEL9K_STATUS_CROSS=true
+POWERLEVEL9K_STATUS_ERROR_ICON='uf00d'
+POWERLEVEL9K_STATUS_ERROR_FOREGROUND="001" #red
+POWERLEVEL9K_STATUS_ERROR_BACKGROUND="SlateGray"
+POWERLEVEL9K_STATUS_OK_ICON='uf00c'
+POWERLEVEL9K_STATUS_OK_FOREGROUND="006" #LightSeaGreen
+POWERLEVEL9K_STATUS_OK_BACKGROUND="241" #SlateGray
+# --- Time
+POWERLEVEL9K_TIME_BACKGROUND="000" #black
+POWERLEVEL9K_TIME_FOREGROUND="006" #LightSeaGreen
+POWERLEVEL9K_TIME_FORMAT="\uf017 %H:%M"
+# --- Disposizione Elementi
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(host user root_indicator dir vcs ssh)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status dir_writable time)
