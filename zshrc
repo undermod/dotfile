@@ -65,6 +65,7 @@ source $ZSH/oh-my-zsh.sh
 
 # You may need to manually set your language environment
 export LANG=it_IT.UTF-8
+export LC_ALL=it_IT.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -93,16 +94,21 @@ export LANG=it_IT.UTF-8
 # ------------------------------------------------------ #
 
 # Software
-alias agg='sudo dnf update'
-alias inst='sudo dnf install'
-alias cerca='sudo dnf search'
-alias rem='sudo dnf remove'
+alias agg='sudo pacman -Syu'
+alias inst='sudo pacman -S'
+alias cerca='sudo pacman -Ss'
+alias rem='sudo pacman -Rns'
+alias ycerca='yaourt -Ss'
+alias yinst='yaourt -S'
 # Comandi
-alias icone='sudo dolphin /usr/share/icons &'
-alias temi='sudo dolphin /usr/share/themes &'
-alias bashrc='kate ~/.bashrc &'
+alias icone='sudo thunar /usr/share/icons &'
+alias temi='sudo thunar /usr/share/themes &'
+alias autostart='mousepad ~/.config/openbox/autostart &'
+alias rc='mousepad ~/.config/openbox/rc.xml &'
+alias menu='mousepad ~/.config/openbox/menu.xml &'
+alias bashrc='mousepad ~/.bashrc &'
 alias aggbash='source ~/.bashrc'
-alias zshrc='kate ~/.zshrc &'
+alias zshrc='mousepad ~/.zshrc &'
 alias aggzsh='source ~/.zshrc'
 alias server='ssh antonio@192.168.1.100'
 # Visualizzazione
@@ -119,7 +125,12 @@ POWERLEVEL9K_MODE='awesome-patched'
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="┌─"
 POWERLEVEL9K_MULTILINE_LAST_PROMPT_PREFIX="└───╼ "
-POWERLEVEL9K_PROMPT_ADD_NEWLINE=true 
+POWERLEVEL9K_PROMPT_ADD_NEWLINE=true
+# --- Separator
+#POWERLEVEL9K_LEFT_SEGMENT_SEPARATOR="\uF105"
+#POWERLEVEL9K_LEFT_SUBSEGMENT_SEPARATOR="%F{$(( $DEFAULT_BACKGROUND - 2 ))}|%f"
+#POWERLEVEL9K_RIGHT_SEGMENT_SEPARATOR="\uF104"
+#POWERLEVEL9K_RIGHT_SUBSEGMENT_SEPARATOR="%F{$(( $DEFAULT_BACKGROUND - 2 ))}|%f"
 # --- Context Locale
 POWERLEVEL9K_HOST_ICON_FOREGROUND="006" #LightSeaGreen
 POWERLEVEL9K_HOST_ICON_BACKGROUND="005" #Purple
@@ -145,11 +156,11 @@ POWERLEVEL9K_SHORTEN_DIR_LENGTH=2
 POWERLEVEL9K_DIR_WRITABLE_FORBIDDEN_FOREGROUND="015" #white
 POWERLEVEL9K_DIR_WRITABLE_FORBIDDEN_BACKGROUND="001" #red
 POWERLEVEL9K_HOME_ICON='\uf015 '
-POWERLEVEL9K_DIR_HOME_FOREGROUND="015" #white
-POWERLEVEL9K_DIR_HOME_BACKGROUND="012" #blue
+POWERLEVEL9K_DIR_HOME_FOREGROUND="241" #SlateGray
+POWERLEVEL9K_DIR_HOME_BACKGROUND="006" #light-cyan
 POWERLEVEL9K_HOME_SUB_ICON='\uf07c '
-POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND="015" #white
-POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND="012" #blue
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_FOREGROUND="241" #SlateGray
+POWERLEVEL9K_DIR_HOME_SUBFOLDER_BACKGROUND="006" #light-cyan
 POWERLEVEL9K_FOLDER_ICON='\uf109 '
 POWERLEVEL9K_DIR_DEFAULT_FOREGROUND="015" #white
 POWERLEVEL9K_DIR_DEFAULT_BACKGROUND="012" #blue
@@ -179,7 +190,25 @@ POWERLEVEL9K_STATUS_OK_BACKGROUND="241" #SlateGray
 # --- Time
 POWERLEVEL9K_TIME_BACKGROUND="000" #black
 POWERLEVEL9K_TIME_FOREGROUND="006" #LightSeaGreen
-POWERLEVEL9K_TIME_FORMAT="\uf017 %H:%M"
+POWERLEVEL9K_TIME_FORMAT="\uf017 %D{%H:%M}"
+# --- Battery
+POWERLEVEL9K_BATTERY_ICON='\UF240 '
+POWERLEVEL9K_BATTERY_CHARGED='blue'
+POWERLEVEL9K_BATTERY_CHARGED_ICON='/UF240 '
+POWERLEVEL9K_BATTERY_CHARGED_BACKGROUND='46'
+POWERLEVEL9K_BATTERY_CHARGED_FOREGROUND='235'
+POWERLEVEL9K_BATTERY_CHARGING='yellow'
+POWERLEVEL9K_BATTERY_CHARGING_ICON='/UF1E6 '
+POWERLEVEL9K_BATTERY_CHARGING_BACKGROUND='178'
+POWERLEVEL9K_BATTERY_CHARGING_FOREGROUND='235'
+POWERLEVEL9K_BATTERY_LOW_COLOR='red'
+POWERLEVEL9K_BATTERY_LOW_ICON='/UF244 '
+POWERLEVEL9K_BATTERY_LOW_BACKGROUND='88'
+POWERLEVEL9K_BATTERY_LOW_FOREGROUND='235'
+POWERLEVEL9K_BATTERY_LOW_THRESHOLD='10'
+POWERLEVEL9K_BATTERY_DISCONNECTED_FOREGROUND='195'
+POWERLEVEL9K_BATTERY_DISCONNECTED_BACKGROUND='009'
+
 # --- Disposizione Elementi
-POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(host user root_indicator dir vcs ssh)
-POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status dir_writable)
+POWERLEVEL9K_LEFT_PROMPT_ELEMENTS=(host user dir vcs ssh)
+POWERLEVEL9K_RIGHT_PROMPT_ELEMENTS=(status root_indicator dir_writable time battery)
