@@ -97,20 +97,30 @@ export LC_ALL=it_IT.UTF-8
 alias agg='sudo pacman -Syu'
 alias inst='sudo pacman -S'
 alias cerca='sudo pacman -Ss'
-alias rem='sudo pacman -Rns'
-alias ycerca='yaourt -Ss'
-alias yinst='yaourt -S'
-# Comandi
-alias icone='sudo thunar /usr/share/icons &'
-alias temi='sudo thunar /usr/share/themes &'
-alias autostart='mousepad ~/.config/openbox/autostart &'
-alias rc='mousepad ~/.config/openbox/rc.xml &'
-alias menu='mousepad ~/.config/openbox/menu.xml &'
-alias bashrc='mousepad ~/.bashrc &'
+alias rem='sudo pacman -Rs'
+alias acerca='trizen -s'
+alias ainst='trizen -S'
+# Eye-Candy
+alias icone='dolphin admin:///usr/share/icons &'
+alias temi='dolphin admin:///usr/share/themes &'
+# Configurazioni
+alias vimrc='vim ~/.vimrc'
+alias bashrc='vim ~/.bashrc'
 alias aggbash='source ~/.bashrc'
-alias zshrc='mousepad ~/.zshrc &'
+alias zshrc='vim ~/.zshrc'
 alias aggzsh='source ~/.zshrc'
+alias webconf='sudo vim /etc/httpd/conf/httpd.conf'
+# SSH
 alias server='ssh antonio@192.168.1.100'
+# Web Server
+alias webstart='sudo systemctl start httpd'
+alias webstop='sudo systemctl stop httpd'
+alias webstatus='sudo systemctl status httpd'
+alias webtest='sudo apachectl configtest'
+# Database
+alias sqlstart='sudo systemctl start mysqld'
+alias sqlstop='sudo systemctl stop mysqld'
+alias sqlstatus='sudo systemctl status mysqld'
 # Visualizzazione
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
@@ -120,7 +130,7 @@ alias grep='grep --color=auto'
 # ------------------------------------------------------ #
 
 # --- Caratteri
-POWERLEVEL9K_MODE='awesome-patched'
+POWERLEVEL9K_MODE='nerdfont-complete'
 # --- Prompt multiriga
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="┌─"

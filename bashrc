@@ -10,17 +10,22 @@
 alias agg='sudo pacman -Syu'
 alias inst='sudo pacman -S'
 alias cerca='sudo pacman -Ss'
-alias rem='sudo pacman -Rns'
-alias ycerca='yaourt -Ss'
-alias yinst='yaourt -S'
-# Comandi
-alias icone='sudo thunar /usr/share/icons &'
-alias temi='sudo thunar /usr/share/themes &'
-alias bashrc='mousepad ~/.bashrc &'
+alias rem='sudo pacman -Rs'
+alias acerca='trizen -s'
+alias ainst='trizen -S'
+# Eye-Candy
+alias icone='dolphin admin:///usr/share/icons &'
+alias temi='dolphin admin:///usr/share/themes &'
+# Configurazioni
+alias vimrc='vim ~/.vimrc'
+alias bashrc='vim ~/.bashrc &'
 alias aggbash='source ~/.bashrc'
-alias zshrc='mousepad ~/.zshrc &'
+alias zshrc='vim ~/.zshrc &'
 alias aggzsh='source ~/.zshrc'
+# SSH
 alias server='ssh antonio@192.168.1.100'
+# Web Server
+# Database
 # Visualizzazione
 alias ls='ls --color=auto'
 alias grep='grep --color=auto'
