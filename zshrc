@@ -100,15 +100,19 @@ alias cerca='sudo pacman -Ss'
 alias rem='sudo pacman -Rs'
 alias acerca='trizen -s'
 alias ainst='trizen -S'
+alias arem='trizen -Rs'
 # Eye-Candy
 alias icone='dolphin admin:///usr/share/icons &'
 alias temi='dolphin admin:///usr/share/themes &'
+alias neo='neofetch --w3m /home/undermod/Immagini/Wallpapers/rgb_keyboard.jpg
+'
 # Configurazioni
 alias vimrc='vim ~/.vimrc'
 alias bashrc='vim ~/.bashrc'
 alias aggbash='source ~/.bashrc'
 alias zshrc='vim ~/.zshrc'
 alias aggzsh='source ~/.zshrc'
+alias neorc='vim ~/.config/neofetch/config'
 alias webconf='sudo vim /etc/httpd/conf/httpd.conf'
 # SSH
 alias server='ssh antonio@192.168.1.100'
@@ -130,7 +134,7 @@ alias grep='grep --color=auto'
 # ------------------------------------------------------ #
 
 # --- Caratteri
-POWERLEVEL9K_MODE='nerdfont-complete'
+POWERLEVEL9K_MODE='awesome-patched' #'nerdfont-complete'
 # --- Prompt multiriga
 POWERLEVEL9K_PROMPT_ON_NEWLINE=true
 POWERLEVEL9K_MULTILINE_FIRST_PROMPT_PREFIX="┌─"
